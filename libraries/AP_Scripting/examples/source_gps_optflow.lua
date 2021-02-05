@@ -32,9 +32,6 @@ function play_source_tune(source)
       notify:play_tune("L8C")       -- one long lower tone
     elseif (source == 1) then
       notify:play_tune("L12DD")     -- two fast medium tones
-    elseif (source == 2) then
-      notify:play_tune("L16FFF")    -- three very fast, high tones
-    end
   end
 end
 
@@ -44,12 +41,12 @@ function update()
   -- check switches are configured
   -- source selection from RCx_FUNCTION = 90 (EKF Source Select)
   -- auto source from RCx_FUNCTION = 300 (Scripting1)
-  local rc_function_source = rc:find_channel_for_option(90)
-  local rc_function_auto = rc:find_channel_for_option(300)
-  if (rc_function_source == nil) or (rc_function_auto == nil) then
-    gcs:send_text(0, "ahrs-source.lua: RCx_FUNCTION=90 or 300 not set!")
-    return update, 1000
-  end
+--   local rc_function_source = rc:find_channel_for_option(90)
+--   local rc_function_auto = rc:find_channel_for_option(300)
+--   if (rc_function_source == nil) or (rc_function_auto == nil) then
+--     gcs:send_text(0, "ahrs-source.lua: RCx_FUNCTION=90 or 300 not set!")
+--     return update, 1000
+--   end
 
   -- check rangefinder distance threshold has been set
   local rangefinder_thresh_dist = param:get('SCR_USER1')  -- SCR_USER1 holds rangefinder threshold
