@@ -303,3 +303,7 @@ include ../ArduPlane/quadplane.h depends APM_BUILD_TYPE(APM_BUILD_ArduPlane)
 singleton QuadPlane alias quadplane
 singleton QuadPlane depends APM_BUILD_TYPE(APM_BUILD_ArduPlane)
 singleton QuadPlane method in_vtol_mode boolean
+
+include AP_OpticalFlow/OpticalFlow.h
+singleton OpticalFlow alias opticalflow
+singleton OpticalFlow method flowRate Vector2f
