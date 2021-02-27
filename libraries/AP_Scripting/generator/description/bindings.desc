@@ -307,3 +307,5 @@ singleton QuadPlane method in_vtol_mode boolean
 include AP_OpticalFlow/OpticalFlow.h
 singleton OpticalFlow alias opticalflow
 singleton OpticalFlow method flowRate Vector2f
+singleton OpticalFlow method quality uint8_t
+singleton OpticalFlow method last_update uint32_t
